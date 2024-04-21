@@ -1,0 +1,133 @@
+nav {
+          padding: 1rem;
+          position: fixed;
+          /* overflow: hidden; */
+          top: 0;
+          width: 100%;
+          background-color: rgb(241, 243, 242);
+          z-index: 10;
+          box-shadow: var(--boxShadowNav);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 81.53px;
+}
+
+/* ********************* */
+
+
+
+.links {
+          position: fixed;
+          top: 0;
+                    bottom: 0;
+
+                    right: 0;
+         /* width:70%; */
+overflow-y:auto;
+
+          background-color: var(--hmYellowOpac);
+          height: 100vh;
+          z-index: 5;
+          padding-top: 5.15rem;
+          display: flex;
+          flex-direction: column;
+          box-shadow: var(--boxShadowNav);
+          /* margin-left:100%; */
+          transform:translateX(100%);
+          transition: transform 0.5s cubic-bezier(0.68, -0.65, 0.27, 1.55);
+          /* border: 3px solid blue; */
+}
+
+
+
+.links.open {
+          transform:translateX(0);
+}
+
+
+nav .link,
+.links>.link {
+          text-decoration: none;
+          text-align: center;
+          color: var(--textColor);
+          /* margin: 0 1rem; */
+          padding: 1.75rem 2.5rem;
+          font-family: var(--ns) !important;
+          font-size: 1.25rem;
+          font-weight: 200;
+          transition: all ease-in-out .2s;
+}
+
+.links>.link {
+          border-bottom: 1px solid var(--textColor);
+          color: white;
+}
+
+nav .link:not(.logo_link):hover,
+.links>.link:hover {
+          background-color: var(--hmYellow);
+          color: white;
+}
+
+
+/* ********************* */
+
+.logo_nav {
+          width: 12rem;
+          cursor: pointer;
+}
+
+
+.menu-toggler {
+          display: none;
+          cursor: pointer;
+          background-color: var(--hmGreen);
+          border-radius: 50%;
+          transition: all ease-in-out .2s;
+          border: none;
+          color: white;
+          fill: white;
+          transition: all ease-in .2s;
+
+}
+
+.menu-toggler>svg {
+          font-weight: 300;
+}
+
+.menu-toggler:hover {
+          background-color: var(--hmYellow);
+          transform: scale(1.1);
+}
+
+
+/* ///////////////////////////////////////////////// */
+/* add the menu popout  to MenuBtn   return and this css to its css*/
+/* ///////////////////////////////////////////////// */
+
+
+
+.overlay{
+          overflow:hidden;
+}
+
+.overlay.closed {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 4;
+          transition: all ease-in .2s;
+          cursor: pointer;
+}
+
+.overlay.open {
+          background-color: none;
+}
+
+
+
+

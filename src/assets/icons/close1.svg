@@ -1,0 +1,20 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84" width="150" height="150">
+	<title>close1-svg</title>
+	<style>
+		tspan { white-space:pre } 
+		
+		.t1 { font-size: 5px;fill: #000000;font-family: "' Helvetica  Neue'" } 
+	</style>
+	<g id="Layer">
+		<path id="Layer" fill-rule="evenodd"  d="m84.1 42c0 23.2-18.9 42.1-42.1 42.1-23.2 0-42.1-18.9-42.1-42.1 0-23.2 18.9-42.1 42.1-42.1 23.2 0 42.1 18.9 42.1 42.1zm-3 0c0-21.6-17.5-39.1-39.1-39.1-21.6 0-39.1 17.5-39.1 39.1 0 21.6 17.5 39.1 39.1 39.1 21.6 0 39.1-17.5 39.1-39.1z"/>
+		<path id="Layer"  d="m58.2 25.8c-0.5-0.6-1.5-0.6-2.1 0l-14.1 14.1-14.1-14.1c-0.6-0.6-1.6-0.6-2.1 0-0.6 0.5-0.6 1.5 0 2.1l14.1 14.1-14.1 14.1c-0.6 0.6-0.6 1.6 0 2.1 0.2 0.3 0.6 0.5 1 0.5 0.4 0 0.8-0.2 1.1-0.5l14.1-14.1 14.1 14.1c0.3 0.3 0.7 0.5 1.1 0.5 0.4 0 0.8-0.2 1-0.5 0.6-0.5 0.6-1.5 0-2.1l-14.1-14.1 14.1-14.1c0.6-0.6 0.6-1.6 0-2.1z"/>
+	</g>
+	<text id="Created by 4B Icons" style="transform: matrix(1,0,0,1,-8,107)" >
+		<tspan x="0" y="0" class="t1">Created by 4B Icons
+</tspan>
+	</text>
+	<text id="from the Noun Project" style="transform: matrix(1,0,0,1,-8,112)" >
+		<tspan x="0" y="0" class="t1">from the Noun Project
+</tspan>
+	</text>
+</svg>

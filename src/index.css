@@ -1,0 +1,185 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+:root{
+  /* COLORS */
+  --hmGreen: rgb(40, 105, 51);
+  --hmGreenLite:rgba(40, 105, 51, 0.7);
+  --hmYellow: #f0b400;
+  --hmYellowLite:#edce71;
+  --hmYellowOpac:#edce71ac;
+  --green: #008938;
+  --greenBright: rgb(67, 201, 123);
+
+    --greenLite: rgb(177, 199, 180);
+  --textColor: rgb(72, 72, 72);
+  --bodyBG: rgb(241, 243, 242);
+   
+  /* FONTS */
+    --yk: 'Yanone Kaffeesatz', sans-serif;
+    --ms: "Montserrat", sans-serif;
+    --ns: "Nunito Sans", sans-serif;
+    --ant: "Anton", sans-serif;
+    
+
+    /* SHADOWS */
+    --boxShadow: 0 7px 7px rgba(0, 0, 0, 0.3);
+    --boxShadow2: 0 2px 5px rgba(0, 0, 0, 0.3);
+    --boxShadowNav: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+}
+
+#root{
+  overflow:hidden;
+}
+
+
+body {
+  /* position: relative; */
+    font-family: var(--ms);
+    color: var(--textColor);
+    font-weight:300;
+    background-color: var(--bodyBG);
+    font-size: calc(.5em + .45vw);
+    overflow-x: hidden;
+}
+
+
+/* TRYING TO ALSO APPLY SCROLL TRANSITION TO PARRALLAX CONTAINERS */
+body >div > .home_container{
+  /* border: 3px solid blue; */
+  /* scroll-behavior: smooth; */
+  /* transition: scroll-behavior delay 3s; */
+}
+
+h1,
+h2 {
+  font-family: var(--ns);
+  color: white;
+    text-shadow: var(--boxShadow);
+    font-style: italic;
+  
+}
+
+h1 {
+  font-size: calc(2rem + 1.5vw);
+  font-family: var(--ns)
+}
+
+ h2 {
+   font-size: calc(1rem + 1.5vw);
+    font-weight: 300;
+ }
+
+ h3{
+  margin-bottom:1rem;
+  font-size: 2.5em;
+  color: var(--hmYellow);
+  /* text-shadow:var(--boxShadow) */
+
+ }
+
+main{
+  padding: 1rem 2rem;
+  /* border: 1px solid blue; */
+}
+
+p{
+  line-height:2;
+}
+
+button{
+  padding:1rem;
+  font-size:1.2rem;
+  cursor: pointer;
+  border-radius:10px;
+}
+
+/******************  CHAT BUTTON (App.js) *****************/
+.toggleChat_btn{
+  position:fixed;
+  z-index: 15;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  bottom:1.5rem;
+  right:1.5rem;
+  height:4.25rem;
+  width:4.25rem;
+  background-color: var(--hmGreenLite);
+  padding:0px;
+  border: none;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow: var(--boxShadow);
+  transition:all ease-in .2s;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-5px);
+    /* Adjust the value for the desired floating effect */
+  }
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.toggleChat_btn>svg {
+  fill: white;
+  width: 35px;
+  height: 35px;
+
+}
+
+.toggleChat_btn>svg:first-child {
+  margin-right: -7px;
+  animation: floatUpDown 1s infinite alternate;
+}
+
+.toggleChat_btn>svg:last-child {
+  margin-left: -8px;
+  animation: floatUpDown .9s infinite alternate;
+  fill: var(--hmGreenLite);
+}
+
+
+
+.toggleChat_btn:hover {
+  background-color: var(--hmYellow);
+  fill:var(--hmYellow);
+  transform:scale(1.1);
+  cursor: pointer;
+  animation: pulseEffect 2s ease infinite alternate;
+}
+.toggleChat_btn:hover>svg:first-child,
+.toggleChat_btn:hover>svg:last-child {
+  fill:var(--hmYellow);
+}
+
+/* .toggleChat_btn:hover > svg{
+  fill:var(--hmYellow);
+} */
+
+/* *******************************  PAGE TRANSITION CSS ********************************/
+
+/* Core Styles and Animation */

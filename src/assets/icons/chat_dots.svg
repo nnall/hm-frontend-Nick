@@ -1,0 +1,19 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" width="150" height="150">
+	<title>chat_dots-svg</title>
+	<defs>
+		<image  width="90" height="90" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaBAMAAADKhlwxAAAAAXNSR0IB2cksfwAAACpQTFRFAAAA////////////////////////////////////////////////////hrvKLwAAAA50Uk5TAP/9/u7t+5fgtLXD8PwWXCbcAAABTElEQVR4nO3XMQ6CMBQG4D5NdJXB3Th6CuOJvIab93HxCB7BE4iriwiFtq8U2v+RNHGASeHLzw8obUkFW2E+lMEhGrVDvqdp43+v3hHdx33u6UINbLwN14PYS2c6rBFwp8cw504P99CbrW51BLtwo8d78HCjY9GOExJtuxAUbcIpEk3FqxdOWHQXPkGnrtFWITC6DScwug2Xa6iIrkJotA4Xa7CIUNfFCS7ShMv18nSDdaFWhwcWXjZ6/QGraH2+whq/yLp4Vg0/SbFWs541qHfPf2nyHzrvfz6nxoeG7q2ZR08ZSSRaNgIKdc5xXjbjyDr3kc3ChDM8RE+dawLhfNbbhi++iWg+W7/st0dM6/D7OPabpJuzq1Tp2+LuN8Tts4S62N8JzPmKMcVLYDXKub/SDXn9VnBnrIBVNNsXXaGblaL1gXaHvAVxu/MHS912YIVocQQAAAAASUVORK5CYII="/>
+	</defs>
+	<!-- <style>
+		tspan { white-space:pre } 
+		.s0 { fill: #286933 } 
+		.t1 { font-size: 5px;fill: #286933;font-family: "' Helvetica  Neue'" } 
+	</style> -->
+	<use id="Layer" href="#img1" x="0" y="0"/>
+	<path id="Shape 1" class="s0" d="m22 54c-4.4 0-8-3.6-8-8 0-4.4 3.6-8 8-8 4.4 0 8 3.6 8 8 0 4.4-3.6 8-8 8z"/>
+	<path id="Shape 1 copy" class="s0" d="m45 53c-4.4 0-8-3.6-8-8 0-4.4 3.6-8 8-8 4.4 0 8 3.6 8 8 0 4.4-3.6 8-8 8z"/>
+	<path id="Shape 1 copy 2" class="s0" d="m67 53c-4.4 0-8-3.6-8-8 0-4.4 3.6-8 8-8 4.4 0 8 3.6 8 8 0 4.4-3.6 8-8 8z"/>
+	<text id="from the Noun Project" style="transform: matrix(1,0,0,1,-5,115)" >
+		<tspan x="0" y="0" class="t1">from the Noun Project
+</tspan>
+	</text>
+</svg>
