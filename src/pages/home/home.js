@@ -106,7 +106,8 @@ const Home = () => {
   return (
     <Parallax pages={2} className="home_container">
       {/* Layer with the background video */}
-      <ParallaxLayer offset={0} speed={0.8}>
+      {/* HEADER LAYER */}
+      <ParallaxLayer offset={0} factor={2} speed={0.8}>
         <header>
           <video
             className="video_background"
@@ -133,7 +134,8 @@ const Home = () => {
           className="parallax_layer"
           offset={0.35}
           speed={1.2}
-          style={{ height: "min-content", border: "2px solid aqua" }}
+          factor={3}
+          style={{ height: "min-content", border: "2px solid orange" }}
         >
           <div className="main_home_text">
             <h3>Our Mission</h3>
@@ -162,7 +164,8 @@ const Home = () => {
         <ParallaxLayer
           className="parallax_layer"
           offset={1}
-          speed={10}
+          speed={2}
+          factor={2}
           style={{ border: "2px solid blue" }}
         >
           <div className="main_home_text_2">
@@ -301,8 +304,8 @@ const Home = () => {
         <ParallaxLayer
           className="parallax_layer parallax_layer_img"
           offset={1}
-          speed={10}
-          style={{ /* height: "1vh", */ border: "2px solid red" }}
+          speed={1}
+          style={{ /* height: "1vh", */ border: "5px solid red" }}
         >
           <img src={family_img} className="main_home_img" alt="family_img" />
         </ParallaxLayer>
