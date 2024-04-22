@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// const API_KEY = "AIzaSyCbC9CDQ76QsKGmPQDvxl4QgbLvUqRocyM";
-
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
 
