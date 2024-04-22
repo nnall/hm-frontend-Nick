@@ -161,8 +161,8 @@ const Home = () => {
         {/* FORM LAYER */}
         <ParallaxLayer
           className="parallax_layer"
-          offset={0.9999999999}
-          speed={4}
+          offset={1}
+          speed={10}
           style={{ border: "2px solid blue" }}
         >
           <div className="main_home_text_2">
@@ -300,8 +300,8 @@ const Home = () => {
         {/* IMAGE LAYER */}
         <ParallaxLayer
           className="parallax_layer parallax_layer_img"
-          offset={0.99}
-          speed={3.25}
+          offset={1}
+          speed={10}
           style={{ /* height: "1vh", */ border: "2px solid red" }}
         >
           <img src={family_img} className="main_home_img" alt="family_img" />

@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/home/home";
-import Inventory from "./pages/inventory/inventory";
+// import Inventory from "./pages/inventory/inventory";
 import AppNav from "./components/appNav/appNav";
 import Footer from "./components/footer/footer";
 import Chatbox from "./components/chatbox/chatbox";
