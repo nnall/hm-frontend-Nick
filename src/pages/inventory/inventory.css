@@ -1,0 +1,8 @@
+.inventory_container{
+          height: 100vh;
+          overflow-y: auto;
+          overflow-x: hidden;
+          border: 3px solid red;
+          background-color: pink;
+          /* perspective: 10px; */
+}
