@@ -1,10 +1,10 @@
+/* HOME.CSS */
+
+
 .home_container {
-          display:flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          /* border: 2px solid red; */
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* main and header  - anything with this class relates its 'frontness/backness' to the parallax perspective:(10px),  using translateZ()  &  scale() <-- to look normal sized (not sure how z-index also plays a role)*/
@@ -14,8 +14,8 @@
 Normally would apply scale here too, but bc .parallax_layer has to be applied to main to reach the grandchildren, we  don't want ot also scale main.
 */
 header {
-  width:100%;
-  height:40vh;
+  width: 100%;
+  height: 40vh;
   max-height: 45rem;
   /* border: 2px solid blue; */
   /* Parallax settings */
@@ -24,72 +24,79 @@ header {
 }
 
 header>video {
-    width: 100%;
-    height:100%;
-    object-fit: cover;
-      /* border: 2px solid red;     */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border: 2px solid red;     */
 }
 
 /*  */
 
 .title_box_foreground {
-  position:absolute;
-          /* transform: translateZ(1px) scale(2); */
-          height: min-content;
-          align-self: flex-start;
-          top:0;
-          left:0;
-          /* margin-left: 0px; */
-          /* left: 10%; */
+  position: absolute;
+  /* transform: translateZ(1px) scale(2); */
+  height: min-content;
+  align-self: flex-start;
+  top: 0;
+  left: 0;
+  /* margin-left: 0px; */
+  /* left: 10%; */
 }
 
 
 
-.parallax_layer{
-  max-width: 150rem;
+main {
+  border: 4px solid black;
 }
 
-main >*:not(.parallax_layer_img){
+/* main >*:not(.parallax_layer_img){
   padding:0 10%;;
-}
+} */
 
-.parallax_layer_img{
-  z-index:-1;
-}
 
 
 .main_home_text,
 .main_home_text_2 {
-          background-color:white;
-          padding: calc(1.1rem + 1vw);
-          box-shadow: var(--boxShadow);
+  background-color: white;
+  padding: calc(1.1rem + 1vw);
+  box-shadow: var(--boxShadow);
 }
 
 .main_home_text {
-          border: 1px solid black;
-          align-self:center
+  /* border: 4px solid black; */
+  align-self: center;
+  max-width: 70rem;
 }
 
 
 .main_home_img {
- width:150%;
+  width: 150%;
 }
 
 /* FORM CONTAINER */
 .main_home_text_2 {
   background-color: var(--hmYellowLite);
-  max-width: 75rem;
+  width: 90%;
+  /* min-width:40rem; */
+  max-width: 60rem;
+}
+
+@media (min-width: 767px) {
+  .main_home_text_2 {
+    width: 70%;
+  }
+
 }
 
 h2.preApprove_title {
-          color: var(--hmGreen);
-          font-family: var(--ant);
-          font-size: calc(2.5rem + 3.5vw);
-          line-height: .95;
-          /* width: max-content; */
-          transform: rotate(-12deg) scale(.8) translateY(-10rem) translateX(-15%);
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: white;
+  color: var(--hmGreen);
+  font-family: var(--ant);
+  font-size: calc(2.5rem + 3.5vw);
+  line-height: .95;
+  /* width: max-content; */
+  transform: rotate(-12deg) scale(.8) translateY(-10rem) translateX(-15%);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 }
 
 
@@ -97,37 +104,44 @@ h2.preApprove_title {
 /********* PRE-APPROVAL FORM / CREDIT APPLICATION *********/
 
 .preApproval_form {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          transform-style: preserve-3d;;
-          pointer-events: active;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transform-style: preserve-3d;
+  ;
+  pointer-events: active;
 
-          /* font-size: 1.5em; */
+  font-size: .8em;
 
 }
 
 .preApproval_form>div {
 
-          display: flex;
-          flex-direction: column;
-          gap: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 
 .preApproval_input {
-          color: var(--textColor);
-          border: none;
-          font-family: var(--ns);
-          padding: .5rem;
-          font-size: 1em;
-          font-weight: 200;
+  color: var(--textColor);
+  border: none;
+  font-family: var(--ns);
+  padding: .5rem;
+  font-size: 1em;
+  font-weight: 200;
 }
 
 select.preApproval_input option {
-          background-color: blue;
+  background-color: blue;
 }
 
 textarea.preApproval_input {
-          resize: none;
+  resize: none;
 }
 
+
+/* ************* THIRD PAGE**************/
+.main_home_logo {
+  width: 30%;
+  /* border: 2px solid red; */
+}

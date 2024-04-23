@@ -1,0 +1,86 @@
+/* PARALLAX.CSS */
+
+.centering {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+}
+
+
+.parallax_wrapper {
+          height: 100vh;
+          overflow-x: hidden;
+          overflow-y: auto;
+          perspective: 10px;
+}
+
+.parallax_group {
+          position: relative;
+          width: 100%;
+          transform-style: preserve-3d;
+          border: 2px solid blue;
+          height: 100vh;
+          display: inline-block;
+}
+
+/* #parallax_group_1 {
+     border: 5px solid green;
+     height:100vh;
+} */
+
+.parallax_group .parallax_layer {
+          transform-style: preserve-3d;
+
+}
+
+
+
+/* FIRST PAGE */
+.top_layer.text1 {
+          transform: translateZ(3px) scale(.65);
+          border: 3px solid red;
+          /* max-width:60rem; */
+          position: relative;
+          z-index: 2;
+          display: flex;
+          justify-content: center;
+
+}
+
+/* SECOND PAGE */
+
+.form_group {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          border: 3px solid red;
+}
+
+.base_layer.bg_img {
+          width: 110vw;
+          transform: translateZ(-1px)
+                    /* scale(1.2vw)  */
+                    translateY(20vh);
+}
+
+.top_layer.form {
+          position: absolute;
+          transform: translateZ(5px) scale(.5) translateY(30vh);
+          ;
+}
+
+/* THIRD PAGE */
+
+.text_group {
+          /* transform:translateY() */
+}
+
+.base_layer.logo_img {
+          transform: translateZ(-3px) scale(2)
+                    /* translateY(30vh) */
+          ;
+          ;
+}
+
