@@ -1,86 +1,73 @@
-/* PARALLAX.CSS */
-
 .centering {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
 
+.parallax_parent {
+     height: 100vh;
+}
 
+/* top: min(-11vw, -8vw); */
 .parallax_wrapper {
-          height: 100vh;
-          overflow-x: hidden;
-          overflow-y: auto;
-          perspective: 10px;
+     height: 100vh;
+     overflow-x: hidden;
+     overflow-y: auto;
+     perspective: 10px;
+     /* border: 7px solid black;  */
+     margin-top: 5rem;
 }
 
 .parallax_group {
-          position: relative;
-          width: 100%;
-          transform-style: preserve-3d;
-          border: 2px solid blue;
-          height: 100vh;
-          display: inline-block;
-}
-
-/* #parallax_group_1 {
-     border: 5px solid green;
-     height:100vh;
-} */
-
-.parallax_group .parallax_layer {
-          transform-style: preserve-3d;
-
+     position: relative;
+     width: 100%;
+     transform-style: preserve-3d;
+     height: 100vh;
+     /* border: 2px solid blue; */
+     /* height:100%; */
 }
 
 
+/******************** FIRST PAGE ********************/
 
-/* FIRST PAGE */
+.parallax_group.intro_group {
+     display: inline-block;
+     height: 80vh;
+     /* height:100%; */
+}
+
 .top_layer.text1 {
-          transform: translateZ(3px) scale(.65);
-          border: 3px solid red;
-          /* max-width:60rem; */
-          position: relative;
-          z-index: 2;
-          display: flex;
-          justify-content: center;
+     transform: translateZ(2px) scale(.65);
+     display: flex;
+     justify-content: center;
 
 }
 
-/* SECOND PAGE */
+/****************** SECOND PAGE ******************/
 
-.form_group {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          border: 3px solid red;
-}
 
 .base_layer.bg_img {
-          width: 110vw;
-          transform: translateZ(-1px)
-                    /* scale(1.2vw)  */
-                    translateY(20vh);
+     transform: translateZ(3px) scale(.8) translateY(max(-14vw, -12vw));
 }
 
 .top_layer.form {
-          position: absolute;
-          transform: translateZ(5px) scale(.5) translateY(30vh);
-          ;
+     position: absolute;
+     z-index: -1;
+     transform: translateZ(5px) scale(.475) translateY(-20vh);
+     ;
+     ;
 }
 
-/* THIRD PAGE */
 
-.text_group {
-          /* transform:translateY() */
-}
+
+/* **********************THIRD PAGE ***********************/
+
 
 .base_layer.logo_img {
-          transform: translateZ(-3px) scale(2)
-                    /* translateY(30vh) */
-          ;
-          ;
+     /* z-index:-1; */
+     transform: translateZ(4px) translateX(17vw) translateY(30vh)rotate(-20deg);
 }
 
+.top_layer.para_layer {
+     transform: translateZ(2px) scale(.8) translateX(17vw) translateY(30vh);
+}

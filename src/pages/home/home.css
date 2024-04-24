@@ -1,10 +1,7 @@
-/* HOME.CSS */
-
-
 .home_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  /* display:flex;
+          flex-direction: column;
+          justify-content: flex-start; */
 }
 
 /* main and header  - anything with this class relates its 'frontness/backness' to the parallax perspective:(10px),  using translateZ()  &  scale() <-- to look normal sized (not sure how z-index also plays a role)*/
@@ -17,8 +14,6 @@ header {
   width: 100%;
   height: 40vh;
   max-height: 45rem;
-  /* border: 2px solid blue; */
-  /* Parallax settings */
   box-shadow: var(--boxShadowNav);
 
 }
@@ -34,13 +29,12 @@ header>video {
 
 .title_box_foreground {
   position: absolute;
-  /* transform: translateZ(1px) scale(2); */
   height: min-content;
   align-self: flex-start;
   top: 0;
   left: 0;
-  /* margin-left: 0px; */
-  /* left: 10%; */
+  margin: min(10vw, 4rem);
+  ;
 }
 
 
@@ -66,35 +60,32 @@ main {
   /* border: 4px solid black; */
   align-self: center;
   max-width: 70rem;
-}
 
-
-.main_home_img {
-  width: 150%;
 }
 
 /* FORM CONTAINER */
 .main_home_text_2 {
   background-color: var(--hmYellowLite);
-  width: 90%;
-  /* min-width:40rem; */
-  max-width: 60rem;
-}
-
-@media (min-width: 767px) {
-  .main_home_text_2 {
-    width: 70%;
-  }
-
+  width: clamp(50%, max(75%, 95vw), 60rem);
+  /* min-width:90vw; */
 }
 
 h2.preApprove_title {
   color: var(--hmGreen);
   font-family: var(--ant);
-  font-size: calc(2.5rem + 3.5vw);
+  font-size: calc(2.5rem + 3vw);
   line-height: .95;
-  /* width: max-content; */
-  transform: rotate(-12deg) scale(.8) translateY(-10rem) translateX(-15%);
+  position: absolute;
+  top: min(-8vw, -13%);
+  left: max(3vw, 8%);
+  /* left:2vw; */
+
+  /* top:-20%; */
+  z-index: 2;
+  transform: rotate(-8deg)scale(1.4)
+    /* translateY() */
+  ;
+
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
 }
@@ -107,16 +98,10 @@ h2.preApprove_title {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  transform-style: preserve-3d;
-  ;
-  pointer-events: active;
-
   font-size: .8em;
-
 }
 
 .preApproval_form>div {
-
   display: flex;
   flex-direction: column;
   gap: .5rem;
@@ -141,7 +126,12 @@ textarea.preApproval_input {
 
 
 /* ************* THIRD PAGE**************/
+/* IMG */
 .main_home_logo {
   width: 30%;
-  /* border: 2px solid red; */
+}
+
+.para_layer p {
+  width: clamp(50%, min(85%, 100vw), 40rem);
+  border: 1px solid red;
 }
