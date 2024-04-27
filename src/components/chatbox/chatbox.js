@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { ReactComponent as Close1 } from "../../assets/icons/close1.svg";
 import { ReactComponent as Close2 } from "../../assets/icons/close2.svg";
@@ -7,6 +7,22 @@ import "./chatbox.css";
 const Chatbox = ({ showChatbox, toggleChatbox }) => {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
+  const chatboxRef = useRef(null);
+  const scrollToBottom = () => {
+    chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
+  };
   //leave it out completely and just rewrite it here changing the received 'showChatbox;
 
   const handleToggleChatbox = () => {
@@ -42,8 +58,7 @@ const Chatbox = ({ showChatbox, toggleChatbox }) => {
     }
   };
 
-  const [isHovered, setIsHovered] = useState(false);
-
+  // Exit button, or other
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -58,16 +73,30 @@ const Chatbox = ({ showChatbox, toggleChatbox }) => {
     }
   };
 
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatHistory]);
+
+  // const handleInputChange = (e) => {
+  //   setMessage(e.target.value);
+  //   setIsTyping(!!e.target.value); // Set isTyping to true if input has content
+  // };
+
   return (
-    <div className={`chatbox-container ${showChatbox ? "show" : "hide"}`}>
-      <div className="chatbox">
+    // <div className={`chatbox-container ${showChatbox ? "show" : "hide"}`}>
+    <div
+      className={`chatbox-container ${showChatbox ? "show" : "hide"} ${
+        isFocused ? "focused_container" : ""
+      }`}
+    >
+      <div className="chatbox" ref={chatboxRef}>
         <button
           onClick={handleToggleChatbox}
           className="close_btn"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {isHovered ? <Close2 /> : <Close1 />}
+          <Close2 />
         </button>
         {chatHistory.map((chat, index) => (
           <div
@@ -81,12 +110,17 @@ const Chatbox = ({ showChatbox, toggleChatbox }) => {
       </div>
       <div className="input-container">
         <input
+          // autofocus
           type="text"
           value={message}
+          // style={{ cursor: "wait" }}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           onChange={(e) => setMessage(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder="Type your message..."
+          onKeyDown={handleKeyPress}
+          placeholder={isTyping ? "" : "Type your message..."}
         />
+        {/* <i></i> */}
         <button onClick={sendMessage}>Send</button>
       </div>
     </div>

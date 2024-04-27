@@ -4,18 +4,21 @@
      align-items: center;
 }
 
-.parallax_parent {
-     height: 100vh;
-}
-
 /* top: min(-11vw, -8vw); */
 .parallax_wrapper {
      height: 100vh;
      overflow-x: hidden;
      overflow-y: auto;
-     perspective: 10px;
-     /* border: 7px solid black;  */
-     margin-top: 5rem;
+     perspective: 10.5px;
+     margin-top: 3rem;
+}
+
+@media (min-width:1080px) {
+
+     /* for <AppNav/> breakpoint*/
+     .parallax_wrapper {
+          margin-top: 3.5rem;
+     }
 }
 
 .parallax_group {
@@ -28,45 +31,107 @@
 }
 
 
-/******************** FIRST PAGE ********************/
+/* stacking parallax groups */
+.parallax_group.intro_group {
+     z-index: 3;
+}
 
+
+.parallax_group.form_group {
+     z-index: 2;
+     transform: translateY(12vh);
+     height: 130vh;
+}
+
+@media(min-width: 750px) {
+     .parallax_group.form_group {
+          transform: translateY(-17vh);
+     }
+}
+
+@media(min-width: 1080px) {
+     .parallax_group.form_group {
+          transform: translateY(-12vh);
+     }
+}
+
+.parallax_group.text_group {
+     z-index: 1;
+     /* Lowest z-index */
+}
+
+
+/******************** FIRST PAGE LAYERS********************/
 .parallax_group.intro_group {
      display: inline-block;
-     height: 80vh;
-     /* height:100%; */
+     height: calc(100vh - 47px);
+     /* border: 2px solid yellow; */
 }
+
+@media(min-width:750px) {
+     .base_layer.header {
+          transform: translateZ(3px) scale(.8) translateY(2.5rem)
+     }
+}
+
 
 .top_layer.text1 {
-     transform: translateZ(2px) scale(.65);
+     transform: translateZ(2px) scale(.65) translateY(-95vh);
      display: flex;
      justify-content: center;
-
+     /* border: 2px solid black; */
 }
 
-/****************** SECOND PAGE ******************/
+@media(min-width: 750px) {
+     .parallax_group.intro_group {
+          height: 80vh;
+     }
+
+     .top_layer.text1 {
+          transform: translateZ(3.75px) scale(.5) translateY(
+                    /* -30vh */
+                    -100%);
+     }
+}
+
+/****************** SECOND PAGE LAYERS ******************/
 
 
 .base_layer.bg_img {
-     transform: translateZ(3px) scale(.8) translateY(max(-14vw, -12vw));
+     transform: translateZ(3.5px) scale(.9) translateY(max(-10vw, -12vw));
+     /* min-width:110vw; */
+     /* height:auto; */
+
 }
 
 .top_layer.form {
      position: absolute;
-     z-index: -1;
-     transform: translateZ(5px) scale(.475) translateY(-20vh);
-     ;
+     z-index: 5;
+     transform: translateZ(5px) scale(.45) translateY(-20vh);
      ;
 }
+
+@media(min-width:750px) {
+     .top_layer.form {
+          transform: translateZ(6px) scale(.325) translateY(-50vh);
+     }
+}
+
+/* 
+on ipphone horizontal, the .top_layer.form element is slideing under the ..parallax_group.intro_group (z-index:3), because its parent, .parallax_group.form_group is z-index:2... the .parallax_groups are descending in z-index so that prior overlaps upcoming instead of vice versa
+
+
+Trying to find a way to still have .top_layer.form overlap, , but bc it's parent is set to position:relative, the 'absolute' I'm applying to .top_layer.form is still relating to a lower z-index than .parallax_group.intro_group. 
+
+Figure out 
+*/
 
 
 
 /* **********************THIRD PAGE ***********************/
 
 
-.base_layer.logo_img {
-     /* z-index:-1; */
-     transform: translateZ(4px) translateX(17vw) translateY(30vh)rotate(-20deg);
-}
+
 
 .top_layer.para_layer {
      transform: translateZ(2px) scale(.8) translateX(17vw) translateY(30vh);

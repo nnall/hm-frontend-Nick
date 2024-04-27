@@ -1,7 +1,7 @@
 nav {
-          padding: 1rem;
+
           position: fixed;
-          /* overflow: hidden; */
+          padding-left: 1rem;
           top: 0;
           width: 100%;
           background-color: rgb(241, 243, 242);
@@ -10,7 +10,7 @@ nav {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          height: 81.53px;
+          /* height: 81.53px; */
 }
 
 /* ********************* */
@@ -20,29 +20,24 @@ nav {
 .links {
           position: fixed;
           top: 0;
-                    bottom: 0;
-
-                    right: 0;
-         /* width:70%; */
-overflow-y:auto;
-
-          background-color: var(--hmYellowOpac);
+          bottom: 0;
+          right: 0;
+          overflow-y: auto;
+          background-color: var(--hmYellowLite);
           height: 100vh;
           z-index: 5;
-          padding-top: 5.15rem;
+          padding-top: 3rem;
           display: flex;
           flex-direction: column;
           box-shadow: var(--boxShadowNav);
-          /* margin-left:100%; */
-          transform:translateX(100%);
+          transform: translateX(101%);
           transition: transform 0.5s cubic-bezier(0.68, -0.65, 0.27, 1.55);
-          /* border: 3px solid blue; */
 }
 
 
 
 .links.open {
-          transform:translateX(0);
+          transform: translateX(0);
 }
 
 
@@ -52,11 +47,17 @@ nav .link,
           text-align: center;
           color: var(--textColor);
           /* margin: 0 1rem; */
-          padding: 1.75rem 2.5rem;
+          padding: 1rem 2rem;
           font-family: var(--ns) !important;
-          font-size: 1.25rem;
-          font-weight: 200;
+          font-size: 1.1rem;
+          font-weight: 300;
           transition: all ease-in-out .2s;
+}
+
+@media (min-width: 750px) {
+          .links>.link {
+                    padding: 1.75rem 2.5rem;
+          }
 }
 
 .links>.link {
@@ -66,7 +67,7 @@ nav .link,
 
 nav .link:not(.logo_link):hover,
 .links>.link:hover {
-          background-color: var(--hmYellow);
+          background-color: var(--hmGreen);
           color: white;
 }
 
@@ -108,8 +109,8 @@ nav .link:not(.logo_link):hover,
 
 
 
-.overlay{
-          overflow:hidden;
+.overlay {
+          overflow: hidden;
 }
 
 .overlay.closed {
@@ -127,7 +128,3 @@ nav .link:not(.logo_link):hover,
 .overlay.open {
           background-color: none;
 }
-
-
-
-

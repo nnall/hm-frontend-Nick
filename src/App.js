@@ -19,10 +19,6 @@ import "./index.css";
 import { ReactComponent as Chat1 } from "./assets/icons/chat1.svg";
 import { ReactComponent as Chat2 } from "./assets/icons/chat_dots.svg";
 
-// import Transition from "./animatedRoutes";
-import { AnimatePresence } from "framer-motion";
-// import AnimatedRoutes from "./animatedRoutes";
-
 function App() {
   ///////////////
 
@@ -33,14 +29,10 @@ function App() {
   };
 
   return (
-    // <AnimatePresence>
     <Router>
-      {/* <AppNav /> */}
+      <AppNav />
       <AnimatedRoutes />
-      {/* <Routes>  //relocated to  animatedRoutes.js
-          <Route index path="/" element={<Home />} />
-          <Route path="/inventory" element={<Inventory />} />
-        </Routes> */}
+
       <button className="toggleChat_btn" onClick={toggleChatbox}>
         <Chat1 />
         <Chat2 />
@@ -49,7 +41,6 @@ function App() {
         <Chatbox showChatbox={showChatbox} toggleChatbox={toggleChatbox} />
       )}
     </Router>
-    // </AnimatePresence>
   );
 }
 

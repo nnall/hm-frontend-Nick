@@ -1,40 +1,52 @@
-.home_container {
-  /* display:flex;
-          flex-direction: column;
-          justify-content: flex-start; */
-}
-
 /* main and header  - anything with this class relates its 'frontness/backness' to the parallax perspective:(10px),  using translateZ()  &  scale() <-- to look normal sized (not sure how z-index also plays a role)*/
 
 /* apply to child containers to set  scroll speed.. adjust child containers' sizing at their level...  
 
 Normally would apply scale here too, but bc .parallax_layer has to be applied to main to reach the grandchildren, we  don't want ot also scale main.
 */
+
+
 header {
   width: 100%;
-  height: 40vh;
-  max-height: 45rem;
+  height: 100vh;
+  position: relative;
   box-shadow: var(--boxShadowNav);
 
+}
+
+@media(min-width: 750px) {
+  header {
+    height: 50vh;
+
+    /* max-height: 44rem; */
+    /* border: 2px solid green; */
+  }
 }
 
 header>video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* border: 2px solid red;     */
 }
 
-/*  */
+
 
 .title_box_foreground {
   position: absolute;
   height: min-content;
-  align-self: flex-start;
   top: 0;
-  left: 0;
-  margin: min(10vw, 4rem);
+  left: 8%;
   ;
+  margin-top: 10vh;
+  ;
+  /* border: 1px solid red; */
+}
+
+@media(min-width: 750px) {
+  .title_box_foreground {
+    top: 2rem;
+    transform: scale(.8)
+  }
 }
 
 
@@ -52,40 +64,36 @@ main {
 .main_home_text,
 .main_home_text_2 {
   background-color: white;
-  padding: calc(1.1rem + 1vw);
+  padding: calc(.7rem + 1vw);
   box-shadow: var(--boxShadow);
 }
 
 .main_home_text {
-  /* border: 4px solid black; */
   align-self: center;
   max-width: 70rem;
-
 }
+
 
 /* FORM CONTAINER */
 .main_home_text_2 {
   background-color: var(--hmYellowLite);
-  width: clamp(50%, max(75%, 95vw), 60rem);
+  width: clamp(50%, max(80%, 100vw), 60rem);
+  /* max-height: 900px; */
   /* min-width:90vw; */
 }
 
 h2.preApprove_title {
-  color: var(--hmGreen);
+  color: var(--hmYellow);
   font-family: var(--ant);
-  font-size: calc(2.5rem + 3vw);
+  font-size: calc(2.15rem + 3vw);
   line-height: .95;
   position: absolute;
   top: min(-8vw, -13%);
   left: max(3vw, 8%);
-  /* left:2vw; */
-
-  /* top:-20%; */
   z-index: 2;
   transform: rotate(-8deg)scale(1.4)
     /* translateY() */
   ;
-
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
 }
@@ -94,11 +102,29 @@ h2.preApprove_title {
 
 /********* PRE-APPROVAL FORM / CREDIT APPLICATION *********/
 
+
+
+.bg_img {
+  background-image: url("../../assets/images/family_grad4.webp");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  /* or contain, depending on your preference */
+  background-position: 55%;
+}
+
+@media(max-width: 750px) {
+  .bg_img {
+    background-position: left;
+  }
+}
+
+
 .preApproval_form {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-  font-size: .8em;
+  /* font-size: em; */
 }
 
 .preApproval_form>div {
@@ -128,7 +154,34 @@ textarea.preApproval_input {
 /* ************* THIRD PAGE**************/
 /* IMG */
 .main_home_logo {
-  width: 30%;
+  /* width: 30%; */
+  /* border: 3px solid orange; */
+
+  transform: rotate(-20deg);
+  /* top: 0; */
+  opacity: .7;
+  position: absolute;
+  width: 115%;
+  /* top:-1rem;;
+      left:-38%; */
+  top: -1rem;
+  left: -15%;
+  /* left: -18vw; */
+  z-index: 0;
+}
+
+/* @media(max-width: 750px){
+  .main_home_logo {
+    top:-1rem;
+    left: -15%;
+  }
+} */
+
+.title_box_foreground>h1,
+.title_box_foreground>h2 {
+  position: relative;
+  z-index: 1;
+
 }
 
 .para_layer p {
