@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import "./home.css";
-import "./parallax.css";
+// import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 import ReCAPTCHA from "react-google-recaptcha";
-import videoBG from "../../assets/video/HM_HeaderVid2.mp4";
-import family_img from "../../assets/images/family_grad4.webp";
-import HM_img from "../../assets/images/HM_multi.webp";
-import HM_logo from "../../assets/images/HM_logo.webp";
+// import videoBG from "../../assets/video/HM_HeaderVid2.mp4";
+// import header_bg from "./assets/header_bg.webp";
+// import family_img from "../../assets/images/family_grad4.webp";
+
+// import HM_logo from "../../assets/images/HM_logo.webp";
 import Footer from "../../components/footer/footer";
-import chatIcon from "../../assets/icons/chat1.svg";
-import GoogleReviews from "../../components/GoogleReviews/GoogleReviews";
+// import chatIcon from "../../assets/icons/chat1.svg";
+// import GoogleReviews from "../../components/GoogleReviews/GoogleReviews";
 import Select from "react-select";
-import { motion } from "framer-motion";
+
+import "./home.css";
+import "./parallax_home.css";
+// import { motion } from "framer-motion";
 
 const Home = () => {
   const locations = [
@@ -71,71 +73,54 @@ const Home = () => {
     <div className=" home_container parallax_wrapper">
       {/******  GROUP 1 ******/}
       <div
-        className="parallax_group intro_group centering"
+        className="parallax_group section intro_section"
         id="parallax_group_1"
       >
-        <div className="parallax_layer base_layer header">
-          <header>
-            <video
-              className="video_background"
-              src={videoBG}
-              autoPlay
-              muted
-              loop
-            />
+        {/* <img src={header_bg} className="picture_box" /> */}
+        <div className="top_parallax_layer intro_text">
+          {/* <div className="main_home_text"> */}
 
-            <div className="title_box_foreground">
-              <img
-                src={HM_img}
-                className="main_home_logo"
-                alt="holmes_motors_logo"
-              />
-              <h1>Welcome!</h1>
-              <h2>&emsp; There's no place like Holmes!</h2>
-            </div>
-          </header>
-        </div>
-        <div className="parallax_layer top_layer text1">
-          <div className="main_home_text">
-            <h3>Our Mission</h3>
-            <p>
-              &emsp; We are a locally owned lease-here-pay-here car lot,
-              providing top-notch automotive services, serving locations in{" "}
-              <strong>Douglasville GA</strong>, <strong>Birmingham AL</strong>,{" "}
-              <strong>Montgomery AL,</strong> and <strong>Diberville MS</strong>{" "}
-              for{" "}
-              <u>
+          <div className="title_box_foreground">
+            <h1 className="welcome">Welcome!</h1>
+            <h2 className="slogan">There's no place like Holmes!</h2>
+          </div>
+          <h2 className="intro_h2">Our Mission</h2>
+          <p>
+            &emsp; We are a locally owned <strong>lease-here-pay-here</strong>{" "}
+            car lot, providing top-notch automotive services, serving locations
+            in <strong>Douglasville GA</strong>, <strong>Birmingham AL</strong>,{" "}
+            <strong>Montgomery AL,</strong> and <strong>Diberville MS</strong>{" "}
+            for{" "}
+            <u>
+              <strong>
                 <i style={{ fontSize: "1.3em", lineHeight: "1" }}>
                   over 25 years
                 </i>
-              </u>
-              . At Holmes Motors, we believe that everyone deserves a reliable
-              vehicle, regardless of their credit history. <br />
-              &emsp; To learn more about our lease-here-pay-here program, click{" "}
-              <a href="/about-us">here</a>.
-            </p>
-          </div>
+              </strong>
+            </u>
+            . At Holmes Motors, we believe that everyone deserves a reliable
+            vehicle, <i>regardless</i> of their credit history. <br />
+            &emsp; To learn more about our lease-here-pay-here program, click{" "}
+            <a href="/about-us">here</a>.
+          </p>
+          {/* </div> */}
         </div>
       </div>
 
       {/* transform: translateZ(5px) scale(.4) translateY(-25vh);  */}
       {/******  GROUP 2 ******/}
       <div
-        className="parallax_group form_group centering "
+        className="parallax_group section form_section"
         id="parallax_group_2"
       >
-        <div className="parallax_layer base_layer bg_img centering">
-          {/* <img src={family_img} className="main_home_img" alt="family_img" /> */}
-        </div>
-
-        <div className="parallax_layer top_layer main_home_text_2  form">
+        <div className="top_parallax_layer form">
           <h2 className="preApprove_title">Apply Now!!</h2>
           <form className="preApproval_form" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="location">Select Your Preferred Location:</label>
               <Select
                 className="basic-single"
-                // pointerEvents="active"
+                pointerEvents="visible"
                 classNamePrefix="select"
                 defaultValue={{
                   value: formData.location,
@@ -154,6 +139,7 @@ const Home = () => {
                 }))}
               />
             </div>
+
             <div>
               <label htmlFor="firstname">First Name:</label>
               <input
@@ -263,9 +249,8 @@ const Home = () => {
         </div>
       </div>
       {/******  GROUP 3 ******/}
-      <div className="parallax_group text_group">
-        <div className="parallax_layer base_layer logo_img"></div>
-        <div className="parallax_layer top_layer para_layer">
+      <div className="parallax_group section text_section">
+        <div className="top_parallax_layer para_layer">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Laudantium, voluptates.

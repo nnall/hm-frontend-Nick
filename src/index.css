@@ -6,117 +6,151 @@
   box-sizing: border-box !important;
 }
 
-:root{
+@font-face {
+  font-family: 'Brush445';
+  /* Name your font family */
+  src: url('./assets/fonts/Brush445/Brush445.otf') format('opentype');
+  /* Update the file name and format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
   /* COLORS */
   --hmGreen: rgb(40, 105, 51);
-  --hmGreenLite:rgba(40, 105, 51, 0.7);
+  --hmGreenLite: rgba(40, 105, 51, 0.7);
   --hmYellow: #f0b400;
-  --hmYellowLite:#edce71;
-  --hmYellowOpac:#edce71ac;
+  --hmYellowLite: #edce71;
+  --hmYellowOpac: #edce71e2;
   --green: #008938;
   --greenBright: rgb(67, 201, 123);
 
-    --greenLite: rgb(177, 199, 180);
+  --greenLite: rgb(177, 199, 180);
   --textColor: rgb(72, 72, 72);
   --bodyBG: rgb(241, 243, 242);
-   
+  --bodyBGOpac: rgba(241, 243, 242, .9);
+
   /* FONTS */
-    --yk: 'Yanone Kaffeesatz', sans-serif;
-    --ms: "Montserrat", sans-serif;
-    --ns: "Nunito Sans", sans-serif;
-    --ant: "Anton", sans-serif;
-    
+  --as: "Alegreya Sans", sans-serif;
+  --yk: 'Yanone Kaffeesatz', sans-serif;
+  --ms: "Montserrat", sans-serif;
+  --ns: "Nunito Sans", sans-serif;
+  --ant: "Anton", sans-serif;
+  --hm: 'Brush445', sans-serif;
 
-    /* SHADOWS */
-    --boxShadow: 0 7px 7px rgba(0, 0, 0, 0.3);
-    --boxShadow2: 0 2px 5px rgba(0, 0, 0, 0.3);
-    --boxShadowNav: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+
+  /* SHADOWS */
+  --boxShadow: 0 7px 7px rgba(0, 0, 0, 0.3);
+  --boxShadow2: 0 2px 5px rgba(0, 0, 0, 0.3);
+  --boxShadow3: 0 3px 3px rgba(0, 0, 0, 0.9);
+  --boxShadowNav: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+
+
 }
 
-#root{
-  overflow:hidden;
-}
 
 
 body {
-  /* position: relative; */
-    font-family: var(--ms);
-    color: var(--textColor);
-    font-weight:300;
-    background-color: var(--bodyBG);
-    font-size: calc(.5em + .45vw);
-    overflow-x: hidden;
+  font-family: var(--ms);
+  /* color: var(--textColor); */
+  color: black;
+  font-weight: 300;
+  background-color: var(--bodyBG);
+  font-size: clamp(10px, calc(.75em + .75vw), 16px);
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
+/* MARGIN-TOP FOR ALL ROUTE PARENTS */
+/* Just increase vh using parallax.css */
+
+
+a {
+  text-decoration: none;
+}
 
 /* TRYING TO ALSO APPLY SCROLL TRANSITION TO PARRALLAX CONTAINERS */
-body >div > .home_container{
-  /* border: 3px solid blue; */
-  /* scroll-behavior: smooth; */
-  /* transition: scroll-behavior delay 3s; */
-}
 
 h1,
-h2 {
-  font-family: var(--ns);
+h2,
+h3 {
+  font-family: var(--hm);
   color: white;
-    text-shadow: var(--boxShadow);
-    font-style: italic;
-  
+  font-style: italic;
+  letter-spacing: -4px;
+  text-shadow: var(--boxShadow3);
 }
 
 h1 {
-  font-size: calc(2rem + 1.5vw);
-  font-family: var(--ns)
+  font-size: clamp(25px, calc(7rem + 7vw), 180px);
+  color: var(--hmGreen);
+
+  transform: rotate(-1deg);
+
+  line-height: calc(5rem + 5vw);
+  font-weight: 800;
+  /* -webkit-text-stroke-width: 2px; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--hmYellow);
 }
 
- h2 {
-   font-size: calc(1rem + 1.5vw);
-    font-weight: 300;
- }
+h2 {
+  font-size: clamp(20px, calc(2.5rem + 2.5vw), 65px);
+  line-height: 40px;
+  font-weight: 200;
 
- h3{
-  margin-bottom:1rem;
-  font-size: 2.5em;
-  color: var(--hmYellow);
+}
+
+h3 {
+  font-size: clamp(20px, calc(2.25rem + 2.25vw), 40px);
+  letter-spacing: -2px;
+  line-height: 40px;
+  margin-bottom: .5rem;
+
+
   /* text-shadow:var(--boxShadow) */
 
- }
-
-main{
-  padding: 1rem 2rem;
-  /* border: 1px solid blue; */
 }
 
-p{
-  line-height:2;
+h4 {
+  font-size: clamp(20px, calc(2.2rem + 2.2vw), 20px);
 }
 
-button{
-  padding:1rem;
-  font-size:1.2rem;
+
+
+p {
+  line-height: 2;
+  /* margin-block-start: 0px;
+  margin-block-end: 0px; */
+}
+
+button {
+  padding: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  border-radius:10px;
+  border-radius: 10px;
 }
 
 /******************  CHAT BUTTON (App.js) *****************/
-.toggleChat_btn{
-  position:fixed;
+.toggleChat_btn {
+  position: fixed;
   z-index: 15;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  bottom:1.5rem;
-  right:1.5rem;
-  height:4.25rem;
-  width:4.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 2rem;
+  right: 2.5rem;
+  height: 4.25rem;
+  width: 4.25rem;
   background-color: var(--hmGreenLite);
-  padding:0px;
+  padding: 0px;
   border: none;
-  border-radius:50%;
-  cursor:pointer;
+  border-radius: 50%;
+  cursor: pointer;
   box-shadow: var(--boxShadow);
-  transition:all ease-in .2s;
+  transition: all ease-in .2s;
 }
 
 @keyframes floatUpDown {
@@ -166,14 +200,15 @@ button{
 
 .toggleChat_btn:hover {
   background-color: var(--hmYellow);
-  fill:var(--hmYellow);
-  transform:scale(1.1);
+  fill: var(--hmYellow);
+  transform: scale(1.1);
   cursor: pointer;
   animation: pulseEffect 2s ease infinite alternate;
 }
-.toggleChat_btn:hover>svg:first-child,
+
+/* .toggleChat_btn:hover>svg:first-child, */
 .toggleChat_btn:hover>svg:last-child {
-  fill:var(--hmYellow);
+  fill: var(--hmYellow);
 }
 
 /* .toggleChat_btn:hover > svg{
@@ -183,3 +218,17 @@ button{
 /* *******************************  PAGE TRANSITION CSS ********************************/
 
 /* Core Styles and Animation */
+.main_home_logo {
+  position: fixed;
+  bottom: 1rem;
+  left: 2rem;
+
+  /* transform:rotate(10deg); */
+  width: 5rem;
+  height: 5rem;
+  /* align-self:flex-start; */
+  z-index: 2;
+
+  opacity: .6;
+
+}

@@ -1,0 +1,369 @@
+.aboutUs_container {
+          border: 3px solid blue;
+          /* position: relative; */
+}
+
+
+.section {
+          display: flex;
+          flex-direction: column;
+
+          align-items: center;
+          justify-content: center;
+          box-shadow: var(--boxShadowNav)
+}
+
+.section:last-child {
+          box-shadow: none;
+          border: 8px solid blue;
+}
+
+
+/************** TITLE SECTION **************/
+
+
+.title_section {
+
+          background-image: url("./assets/titleSectionBg.webp");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+}
+
+.title_text {
+          /* border: 1px solid black; */
+          max-width: 100rem;
+}
+
+h1.aboutUs_title {
+          margin-bottom: 1rem;
+}
+
+
+h3.aboutUs_subtitle {
+          text-shadow: var(--boxShadow2);
+          /* font-family: var(--as); */
+          font-style: italic;
+          font-weight: 900;
+}
+
+.aboutUs_historyPara {
+          margin-top: 1.5rem;
+          padding: 5%;
+          background-color: var(--bodyBGOpac);
+          font-size: clamp(10px, calc(.75em + .75vw), 18px);
+          color: var(--hmGreen);
+          color: black;
+          box-shadow: var(--boxShadow);
+}
+
+/************** FINANCING SECTION **************/
+
+.financing_section {
+          background-color: var(--hmGreen);
+          position: relative;
+}
+
+.financing_text {
+          padding: 4%;
+          max-width: 100rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex-wrap: wrap;
+}
+
+h2.financing_title {
+          position: absolute;
+          color: white;
+          line-height: 100px;
+          bottom: 105%;
+          ;
+          left: -3%;
+          /* margin-left: -4%; */
+          font-size: clamp(25px, calc(5rem + 5vw), 100px);
+
+          >i {
+                    color: var(--hmYellow);
+          }
+}
+
+.options_container {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          align-items: center;
+          justify-content: center;
+          /* border: 1px solid black; */
+}
+
+@media(min-width:700px) {
+          .options_container {
+                    flex-direction: row;
+          }
+}
+
+h3.plan_title {
+          color: var(--hmGreen);
+          text-shadow: none;
+
+          >span {
+                    color: black;
+
+                    font-size: 3.75rem;
+          }
+}
+
+/* PLAN ICONS */
+
+.icon_box {
+          margin-bottom: .5rem;
+          display: flex;
+          width: min-content;
+}
+
+.icon_box>svg {
+          width: 22vw;
+          height: 24vw;
+          max-width: 7rem;
+          max-height: 8rem;
+          stroke: black;
+          stroke-width: 1px;
+          ;
+}
+
+.clipboard {
+          fill: var(--hmGreen);
+
+}
+
+.flag {
+          fill: var(--hmYellow);
+          position: relative;
+          left: -50px;
+}
+
+.plusIcon {
+          position: relative;
+          left: -100px;
+}
+
+/************** LOCATIONS SECTION **************/
+
+.locations_section {
+          background-color: var(--hmYellow);
+          box-shadow: none;
+          /* position:relative; */
+
+}
+
+.locations_text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: calc(2rem + 2vw);
+          background-color: transparent;
+          /* border:1px solid black; */
+
+
+}
+
+.locations_title {
+          margin-left: -3%;
+          /* margin-bottom:3%; */
+          color: var(--hmGreen);
+          align-self: flex-start;
+          font-size: clamp(25px, calc(5rem + 5vw), 160px);
+          line-height: 65px;
+
+          >i {}
+}
+
+
+.location_container {
+          background-color: var(--bodyBG);
+          padding: 3%;
+          border: 2px solid black;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          box-shadow: var(--boxShadow);
+          gap: 5%;
+          width: 90rem;
+          max-width: 95vw;
+          ;
+          position: relative;
+}
+
+.location_img {
+          /* width:25rem;;  */
+          max-width: 100%;
+}
+
+@media(max-width:1145px) {
+          .location_img {
+                    margin-bottom: 1.5rem;
+          }
+}
+
+.web_span {
+          display: flex;
+          align-items: center;
+
+
+
+}
+
+.web_span>svg {
+          height: 2rem;
+          width: min-content;
+}
+
+a.store_link {
+          margin-left: .25rem;
+          color: black;
+}
+
+
+
+
+
+h2.location_title {
+          color: var(--hmGreen);
+          margin-bottom: 1.5rem;
+          margin-left: .5rem;
+          margin-top: 0;
+}
+
+h2.location_title.montgomery_title {
+          margin-left: 1rem;
+}
+
+/* DETAILS PANEL */
+
+/* .details_box > *{
+padding: 1rem;
+} */
+.socialMedia_box {
+          margin-bottom: 1rem;
+}
+
+.socialMedia_box {
+          display: flex;
+          gap: .75rem;
+          flex-wrap: wrap;
+
+}
+
+
+
+.location_para {
+          margin-bottom: 1rem;
+}
+
+.details_panel {
+          padding-top: 1rem;
+
+          border-top: 1px solid black;
+}
+
+.details_panel>p {
+          line-height: unset;
+          display: flex;
+          align-items: center;
+          gap: .8rem;
+
+}
+
+.details_panel>h4,
+.details_panel>p {
+          margin-bottom: .75rem;
+}
+
+.hours_table {
+          margin-top: .5rem;
+}
+
+
+.hours_row {
+          display: flex;
+          padding: .25rem;
+          border-bottom: 1px solid black;
+}
+
+.hours_row:first-child {
+          padding-top: 0;
+}
+
+.hours_row:last-child {
+          border-bottom: none;
+}
+
+.hours_row,
+.phone_text,
+.address_text {
+          font-size: clamp(12px, calc(.75em + .75vw), 18px);
+}
+
+.hours_col {
+          position: relative;
+          margin-left: auto;
+          /* left:-4rem; */
+}
+
+@media(min-width:1145px) {
+
+
+
+          .location_container {
+                    flex-direction: row;
+                    gap: 2%;
+                    /* align-items:flex-start; */
+                    min-height: 479px;
+                    /* border:px solid black; */
+                    /* justify-content: space-evenly; */
+
+          }
+
+          .location_img {
+                    margin-top: 3.5rem;
+                    width: 45%;
+                    /* position:absolute; */
+                    top: 30%;
+          }
+
+          .location_title {
+                    position: absolute;
+                    left: 2rem;
+                    align-self: center;
+
+          }
+
+          .details_box {
+                    display: flex;
+                    margin-top: 2rem;
+                    gap: .75rem;
+                    /* border: 1px solid black; */
+
+                    >* {
+
+                              width: 50%;
+
+                    }
+          }
+
+          .socialMedia_box {
+                    margin-bottom: 0;
+          }
+
+          .details_panel {
+                    margin-top: 0;
+                    border-top: none;
+                    padding-top: 0px;
+          }
+}
+
+.aboutUs_container>footer {
+          background-color: var(--bodyBG);
+          margin-top: 2px solid black;
+}

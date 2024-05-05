@@ -4,126 +4,144 @@
 
 Normally would apply scale here too, but bc .parallax_layer has to be applied to main to reach the grandchildren, we  don't want ot also scale main.
 */
-
-
-header {
-  width: 100%;
-  height: 100vh;
+.home_container {
+  /* border: 4px solid blue; */
   position: relative;
-  box-shadow: var(--boxShadowNav);
-
 }
 
-@media(min-width: 750px) {
-  header {
-    height: 50vh;
-
-    /* max-height: 44rem; */
-    /* border: 2px solid green; */
-  }
+h1.welcome {
+  /* line-height:min-content; */
+  display: inline-block;
+  line-height: 80%;
 }
 
-header>video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-
-.title_box_foreground {
-  position: absolute;
-  height: min-content;
-  top: 0;
-  left: 8%;
-  ;
-  margin-top: 10vh;
-  ;
-  /* border: 1px solid red; */
-}
-
-@media(min-width: 750px) {
-  .title_box_foreground {
-    top: 2rem;
-    transform: scale(.8)
+@media(max-width:700px) {
+  h1.welcome {
+    font-size: clamp(25px, calc(7rem + 7vw), 100px);
   }
 }
 
 
+.section {
+  display: flex;
+  flex-direction: column;
 
-main {
-  border: 4px solid black;
+  align-items: center;
+  justify-content: center;
 }
 
-/* main >*:not(.parallax_layer_img){
-  padding:0 10%;;
-} */
+/* **************** INTRO SECTION *****************/
+
+.intro_section {
+  background-image: url("./assets/header_bg.webp");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  /* position:relative; */
+  align-self: center;
+  z-index: 1;
+}
 
 
 
-.main_home_text,
-.main_home_text_2 {
+.intro_text {
+  /* border: 1px solid green; */
   background-color: white;
   padding: calc(.7rem + 1vw);
   box-shadow: var(--boxShadow);
-}
-
-.main_home_text {
-  align-self: center;
   max-width: 70rem;
+  margin-top: 7%;
 }
 
-
-/* FORM CONTAINER */
-.main_home_text_2 {
-  background-color: var(--hmYellowLite);
-  width: clamp(50%, max(80%, 100vw), 60rem);
-  /* max-height: 900px; */
-  /* min-width:90vw; */
-}
-
-h2.preApprove_title {
-  color: var(--hmYellow);
-  font-family: var(--ant);
-  font-size: calc(2.15rem + 3vw);
-  line-height: .95;
-  position: absolute;
-  top: min(-8vw, -13%);
-  left: max(3vw, 8%);
-  z-index: 2;
-  transform: rotate(-8deg)scale(1.4)
-    /* translateY() */
-  ;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-}
-
-
-
-/********* PRE-APPROVAL FORM / CREDIT APPLICATION *********/
-
-
-
-.bg_img {
-  background-image: url("../../assets/images/family_grad4.webp");
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  /* or contain, depending on your preference */
-  background-position: 55%;
-}
-
-@media(max-width: 750px) {
-  .bg_img {
-    background-position: left;
+@media(max-width: 700px) {
+  .intro_text {
+    margin-top: 30%;
   }
 }
 
+h2 {
+  margin-top: 1rem;
+  color: var(--hmYellow);
+  text-shadow: var(--boxShadow3);
+}
+
+h2.intro_h2 {
+  color: var(--hmGreen);
+  transform: rotate(-1deg);
+  margin-top: -.25rem;
+  margin-bottom: 2rem
+}
+
+.picture_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* height:50%; */
+  width: 100%;
+}
+
+.title_box_foreground {
+  /* border: 1px solid black; */
+  position: absolute;
+
+  top: -16rem;
+  left: -3%;
+
+}
+
+
+/* **************** FORM SECTION *****************/
+/* FORM CONTAINER */
+.form_section {
+  /* background-color: var(--hmGreenLite); */
+  background-image: url("./assets/field_road.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  /* height: min(350vw, 350vh); */
+  /* border: 1px solid red; */
+
+}
+
+
+h2.preApprove_title {
+  color: var(--hmGreen);
+  /* color: black; */
+  line-height: .95;
+  position: absolute;
+  top: -7rem;
+  left: 5rem;
+  /* top: min(-8vw, -13%); */
+  /* left: max(3vw, 8%); */
+  z-index: 1;
+  transform: rotate(-7deg)scale(2);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--hmYellow);
+}
+
+.form {
+  transform-style: preserve-3d;
+  width: 55rem;
+  max-width: 100%;
+  z-index: 2
+}
+
+/* .basic-single{
+  border: 3px solid black;
+  pointer-events: active;;
+
+} */
+
+
+/********* PRE-APPROVAL FORM / CREDIT APPLICATION *********/
 
 .preApproval_form {
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  padding: 5%;
+  background-color: var(--hmYellow);
   /* font-size: em; */
 }
 
@@ -131,6 +149,11 @@ h2.preApprove_title {
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  /* pointer-events: visible;; */
+}
+
+.basic-single {
+  /* pointer-events: visible;; */
 }
 
 .preApproval_input {
@@ -151,38 +174,9 @@ textarea.preApproval_input {
 }
 
 
-/* ************* THIRD PAGE**************/
+
 /* IMG */
-.main_home_logo {
-  /* width: 30%; */
-  /* border: 3px solid orange; */
 
-  transform: rotate(-20deg);
-  /* top: 0; */
-  opacity: .7;
-  position: absolute;
-  width: 115%;
-  /* top:-1rem;;
-      left:-38%; */
-  top: -1rem;
-  left: -15%;
-  /* left: -18vw; */
-  z-index: 0;
-}
-
-/* @media(max-width: 750px){
-  .main_home_logo {
-    top:-1rem;
-    left: -15%;
-  }
-} */
-
-.title_box_foreground>h1,
-.title_box_foreground>h2 {
-  position: relative;
-  z-index: 1;
-
-}
 
 .para_layer p {
   width: clamp(50%, min(85%, 100vw), 40rem);

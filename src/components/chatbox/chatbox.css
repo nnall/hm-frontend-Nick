@@ -1,6 +1,7 @@
 :root {
           /* --chatShadow: 0px 10px 1000px 0px rgba(63, 63, 63, 0.41); */
-          --chatShadow: -5px 0px 10000px -35px rgba(0, 0, 0, 0.41);
+          --chatShadow1: 0px 0px 10000px -35px rgba(0, 0, 0, 0.41);
+          --chatShadow2: 0px 0px 500px -40px rgba(0, 0, 0, 0.41);
 }
 
 
@@ -20,7 +21,9 @@
 
 
           transition: transform 0.4s cubic-bezier(.34, 1.75, .15, .16);
-          ;
+          
+
+          
 }
 
 .chatbox {
