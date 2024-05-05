@@ -1,184 +1,89 @@
-/* main and header  - anything with this class relates its 'frontness/backness' to the parallax perspective:(10px),  using translateZ()  &  scale() <-- to look normal sized (not sure how z-index also plays a role)*/
-
-/* apply to child containers to set  scroll speed.. adjust child containers' sizing at their level...  
-
-Normally would apply scale here too, but bc .parallax_layer has to be applied to main to reach the grandchildren, we  don't want ot also scale main.
-*/
-.home_container {
-     /* border: 4px solid blue; */
-     position: relative;
-}
-
-h1.welcome {
-     /* line-height:min-content; */
-     display: inline-block;
-     line-height: 80%;
-}
-
-@media(max-width:700px) {
-     h1.welcome {
-          font-size: clamp(25px, calc(7rem + 7vw), 100px);
-     }
+/* top: min(-11vw, -8vw); */
+.parallax_wrapper {
+     border: 4px solid blue;
+     height: 100vh;
+     overflow-x: hidden;
+     overflow-y: auto;
+     perspective: 10.5px;
+     margin-top: 4rem;
+     /* <--- moved to container margin index.css */
 }
 
 
-.section {
-     display: flex;
-     flex-direction: column;
-
-     align-items: center;
-     justify-content: center;
-}
-
-/* **************** INTRO SECTION *****************/
-
-.intro_section {
-     background-image: url("./assets/header_bg.webp");
-
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: center top;
-     /* position:relative; */
-     align-self: center;
-     z-index: 1;
-}
-
-
-
-.intro_text {
-     /* border: 1px solid green; */
-     background-color: white;
-     padding: calc(.7rem + 1vw);
-     box-shadow: var(--boxShadow);
-     max-width: 70rem;
-     margin-top: 7%;
-}
-
-@media(max-width: 700px) {
-     .intro_text {
-          margin-top: 30%;
-     }
-}
-
-h2 {
-     margin-top: 1rem;
-     color: var(--hmYellow);
-     text-shadow: var(--boxShadow3);
-}
-
-h2.intro_h2 {
-     color: var(--hmGreen);
-     transform: rotate(-1deg);
-     margin-top: -.25rem;
-     margin-bottom: 2rem
-}
-
-.picture_box {
-     position: absolute;
-     top: 0;
-     left: 0;
-     /* height:50%; */
+.parallax_group {
+     /* position: relative; */
      width: 100%;
-}
-
-.title_box_foreground {
-     /* border: 1px solid black; */
-     position: absolute;
-
-     top: -16rem;
-     left: -3%;
-
-}
-
-
-/* **************** FORM SECTION *****************/
-/* FORM CONTAINER */
-.form_section {
-     /* background-color: var(--hmGreenLite); */
-     background-image: url("./assets/field_road.webp");
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-position: top;
-     /* height: min(350vw, 350vh); */
-     /* border: 1px solid red; */
-
-}
-
-
-h2.preApprove_title {
-     color: var(--hmGreen);
-     /* color: black; */
-     line-height: .95;
-     position: absolute;
-     top: -7rem;
-     left: 5rem;
-     /* top: min(-8vw, -13%); */
-     /* left: max(3vw, 8%); */
-     z-index: 1;
-     transform: rotate(-7deg)scale(2);
-     -webkit-text-stroke-width: 1px;
-     -webkit-text-stroke-color: var(--hmYellow);
-}
-
-.form {
      transform-style: preserve-3d;
-     width: 55rem;
-     max-width: 100%;
-     z-index: 2
-}
-
-/* .basic-single{
-  border: 3px solid black;
-  pointer-events: active;;
-
-} */
-
-
-/********* PRE-APPROVAL FORM / CREDIT APPLICATION *********/
-
-.preApproval_form {
-     display: flex;
-     flex-direction: column;
-     gap: .5rem;
-     padding: 5%;
-     background-color: var(--hmYellow);
-     /* font-size: em; */
-}
-
-.preApproval_form>div {
-     display: flex;
-     flex-direction: column;
-     gap: .5rem;
-     /* pointer-events: visible;; */
-}
-
-.basic-single {
-     /* pointer-events: visible;; */
-}
-
-.preApproval_input {
-     color: var(--textColor);
+     height: 100vh;
      border: none;
-     font-family: var(--ns);
-     padding: .5rem;
-     font-size: 1em;
-     font-weight: 200;
+     /* border: 2px solid blue; */
+     /* height:100%; */
 }
 
-select.preApproval_input option {
-     background-color: blue;
+.parallax_group.intro_section {
+     height: calc(100vh - 3rem);
 }
 
-textarea.preApproval_input {
-     resize: none;
+.top_parallax_layer {
+     transform-style: preserve-3d;
+     /* border: 2px solid orange; */
+     /* transform: translateZ(2px) scale(.7); */
+     /* max-width: 95vw; */
+     box-shadow: var(--boxShadow);
+     background-color: var(--bodyBGOpac);
+     /* border: 10px solid black; */
+}
+
+.top_paralax_layer>* {
+     transform-style: preserve-3d;
+}
+
+/****************** INTRO SECTION ******************/
+
+.top_parallax_layer.intro_text {
+     /* transform: translateZ(2px) scale(.67); */
+     box-shadow: none;
+
+}
+
+.parallax_group.intro_section {
+     /* height: min(150vw, 150vh); */
+     height: min(250vw, 250vh);
+     max-height: 100vh;
+     border: 4px solid red;
+}
+
+@media(min-width:768px) {
+     .parallax_group.intro_section {
+          max-height: calc(100vh - 3rem);
+     }
 }
 
 
+/****************** FORM SECTION ******************/
+.parallax_group.form_section {
+     /* background-image: url("../../assets/images/family_grad4.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+     height: min(350vw, 350vh);
+     max-height: 80rem;
 
-/* IMG */
+
+}
+
+@media(min-width:768px) {
+     .parallax_group.form_section {
+          max-height: 100vh;
+     }
+}
 
 
-.para_layer p {
-     width: clamp(50%, min(85%, 100vw), 40rem);
-     border: 1px solid red;
+/* **********************THIRD PAGE ***********************/
+
+
+
+
+.top_layer.para_layer {
+     transform: translateZ(2px) scale(.8) translateX(17vw) translateY(30vh);
 }
