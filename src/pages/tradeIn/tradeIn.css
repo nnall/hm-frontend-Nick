@@ -1,0 +1,26 @@
+.tradeIn_title {
+          position: absolute;
+          top: 3rem;
+          left: 3rem;
+}
+
+.form_parallax {
+          transform-style: preserve-3d;
+          width: 55rem;
+          max-width: 100%;
+          /* z-index: 2 */
+}
+
+.tradeIn_form {
+          display: flex;
+          flex-direction: column;
+          gap: .5rem;
+          padding: 5%;
+          background-color: var(--hmYellow);
+}
+
+/* .tradeIn_form>div {
+          display: flex;
+          flex-direction: column;
+          gap: .5rem;
+} */

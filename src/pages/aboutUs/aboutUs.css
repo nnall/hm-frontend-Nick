@@ -4,55 +4,57 @@
 }
 
 
-.section {
-          display: flex;
-          flex-direction: column;
 
-          align-items: center;
-          justify-content: center;
-          box-shadow: var(--boxShadowNav)
-}
-
-.section:last-child {
-          box-shadow: none;
-          border: 8px solid blue;
-}
 
 
 /************** TITLE SECTION **************/
 
 
 .title_section {
-
           background-image: url("./assets/titleSectionBg.webp");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
+
 }
 
-.title_text {
+.title_text,
+.financing_text {
           /* border: 1px solid black; */
-          max-width: 100rem;
+          width: 65rem;
+
 }
 
 h1.aboutUs_title {
           margin-bottom: 1rem;
+          line-height: 3.5rem;
+}
+
+@media(max-width:600px) {
+          h1.aboutUs_title {
+                    font-size: clamp(25px, calc(5rem + 5vw), 75px);
+
+          }
+
 }
 
 
 h3.aboutUs_subtitle {
-          text-shadow: var(--boxShadow2);
+          text-shadow: var(--boxShadow3);
+          color: var(--hmYellow);
           /* font-family: var(--as); */
           font-style: italic;
           font-weight: 900;
+          margin-top: 5%;
+          ;
 }
 
 .aboutUs_historyPara {
           margin-top: 1.5rem;
           padding: 5%;
           background-color: var(--bodyBGOpac);
-          font-size: clamp(10px, calc(.75em + .75vw), 18px);
-          color: var(--hmGreen);
+
+
           color: black;
           box-shadow: var(--boxShadow);
 }
@@ -66,22 +68,25 @@ h3.aboutUs_subtitle {
 
 .financing_text {
           padding: 4%;
-          max-width: 100rem;
+          box-shadow: var(--boxShadow);
           display: flex;
           flex-direction: row;
           align-items: center;
           flex-wrap: wrap;
+          background-color: var(--bodyBGOpac)
 }
 
 h2.financing_title {
-          position: absolute;
-          color: white;
-          line-height: 100px;
-          bottom: 105%;
-          ;
-          left: -3%;
+
+          color: var(--hmGreen);
+          line-height: 65px;
+          margin-bottom: 1.5rem;
+          margin-left: 1rem;
+          -webkit-text-stroke-width: 0;
+          -webkit-text-stroke-color: unset;
+
           /* margin-left: -4%; */
-          font-size: clamp(25px, calc(5rem + 5vw), 100px);
+          font-size: clamp(25px, calc(5rem + 5vw), 70px);
 
           >i {
                     color: var(--hmYellow);
@@ -92,15 +97,29 @@ h2.financing_title {
           display: flex;
           flex-direction: column;
           gap: 2rem;
-          align-items: center;
+          /* align-items: center; */
           justify-content: center;
+          max-width: 100%;
           /* border: 1px solid black; */
+}
+
+.option_container {
+          /* border: 2px solid red; */
 }
 
 @media(min-width:700px) {
           .options_container {
                     flex-direction: row;
+                    align-items: flex-start;
           }
+
+          .option_container {
+                    width: 50%;
+          }
+}
+
+.integrityPlus_container>* {
+          /* border: 1px solid blue; */
 }
 
 h3.plan_title {
@@ -109,8 +128,7 @@ h3.plan_title {
 
           >span {
                     color: black;
-
-                    font-size: 3.75rem;
+                    font-size: 4rem;
           }
 }
 
@@ -119,14 +137,15 @@ h3.plan_title {
 .icon_box {
           margin-bottom: .5rem;
           display: flex;
-          width: min-content;
+          /* width: min-content;
+          max-width:100%; */
 }
 
 .icon_box>svg {
-          width: 22vw;
-          height: 24vw;
-          max-width: 7rem;
-          max-height: 8rem;
+          width: 7rem;
+          height: 8rem;
+          /* max-width: 20%;
+          max-height: 20%; */
           stroke: black;
           stroke-width: 1px;
           ;
@@ -153,30 +172,25 @@ h3.plan_title {
 .locations_section {
           background-color: var(--hmYellow);
           box-shadow: none;
-          /* position:relative; */
-
-}
-
-.locations_text {
+          height: fit-content;
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: calc(2rem + 2vw);
-          background-color: transparent;
-          /* border:1px solid black; */
-
+          /* background-color: blue; */
+          /* position:relative; */
 
 }
 
 .locations_title {
-          margin-left: -3%;
+          align-self: flex-start;
           /* margin-bottom:3%; */
           color: var(--hmGreen);
-          align-self: flex-start;
+          /* align-self: flex-start; */
           font-size: clamp(25px, calc(5rem + 5vw), 160px);
           line-height: 65px;
 
-          >i {}
+
 }
 
 
@@ -189,9 +203,9 @@ h3.plan_title {
           align-items: center;
           box-shadow: var(--boxShadow);
           gap: 5%;
-          width: 90rem;
-          max-width: 95vw;
-          ;
+          width: 75rem;
+          /* max-width: 95vw; */
+
           position: relative;
 }
 
@@ -201,6 +215,11 @@ h3.plan_title {
 }
 
 @media(max-width:1145px) {
+
+          .location_container {
+                    width: 40rem;
+          }
+
           .location_img {
                     margin-bottom: 1.5rem;
           }
@@ -223,10 +242,6 @@ a.store_link {
           margin-left: .25rem;
           color: black;
 }
-
-
-
-
 
 h2.location_title {
           color: var(--hmGreen);
@@ -302,7 +317,7 @@ padding: 1rem;
 .hours_row,
 .phone_text,
 .address_text {
-          font-size: clamp(12px, calc(.75em + .75vw), 18px);
+          font-size: clamp(12px, calc(.75em + .75vw), 15px);
 }
 
 .hours_col {
@@ -317,38 +332,34 @@ padding: 1rem;
 
           .location_container {
                     flex-direction: row;
+                    align-items: flex-start;
                     gap: 2%;
-                    /* align-items:flex-start; */
-                    min-height: 479px;
-                    /* border:px solid black; */
-                    /* justify-content: space-evenly; */
 
           }
 
           .location_img {
-                    margin-top: 3.5rem;
-                    width: 45%;
-                    /* position:absolute; */
-                    top: 30%;
+                    /* margin-top: 3.5rem; */
+                    width: 40%;
+                    height: 315px;
+                    /* top: 30%; */
           }
 
           .location_title {
                     position: absolute;
+                    bottom: 7.5%;
                     left: 2rem;
-                    align-self: center;
-
+                    /* align-self: center; */
           }
 
           .details_box {
                     display: flex;
-                    margin-top: 2rem;
+                    align-items: center;
+
                     gap: .75rem;
-                    /* border: 1px solid black; */
 
                     >* {
-
                               width: 50%;
-
+                              align-self: flex-start;
                     }
           }
 
